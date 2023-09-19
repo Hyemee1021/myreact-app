@@ -1,11 +1,20 @@
+import { List } from "./List";
 import "./App.css";
-import "./Display";
-import Display from "./Display";
+import { useState } from "react";
+import { Form } from "./Form";
 
 const App = () => {
+  const [userArg, setUserArg] = useState([]);
+  //constrolled input
+
+  const AddUser = (user) => {
+    setUserArg([...userArg, user]);
+  };
+
   return (
-    <div className="App">
-      <Display />
+    <div className="app">
+      <Form addUser={AddUser} />
+      <List userArg={userArg} />
     </div>
   );
 };

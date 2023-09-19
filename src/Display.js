@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Paragraph } from "./Paragraph";
 
 const Display = () => {
   const [counter, setCounter] = useState(0);
@@ -20,6 +21,7 @@ const Display = () => {
       </div>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
+      <Paragraph counter={counter} />
     </div>
   );
 };
